@@ -1,7 +1,4 @@
 package com.xworkz.queries;
-
-
-
 import com.xworkz.enumValues.CartoonEnum;
 
 import java.sql.Connection;
