@@ -1,5 +1,7 @@
 package com.xworkz.Town.Queries;
 
+import com.xworkz.Town.Entity.TownEntity;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,14 +15,13 @@ public class Query4 {
             try {
                 entityTransaction.begin();
                 Query query = entityManager.createQuery(
-                        "SELECT t.townName, t.phone FROM TownEntity t WHERE t.age > 15"
+                        "SELECT t FROM TownEntity t WHERE t.age > 15",TownEntity.class
                 );
-                List<Object[]> results = query.getResultList();
-                for (Object[] result : results) {
-                    String townName = (String) result[0];
-                    long phone = (long) result[1];
-                    System.out.println("Town Name: " + townName + ", Phone: " + phone);
+//
 
+                List<TownEntity> resultList = query.getResultList();
+                for (TownEntity town : resultList) {
+                    System.out.println("Town Name: " + town.getTownName()  + ", Phone: " + town.getPhone());
                 }
                 entityTransaction.commit();
             } catch (Exception e){

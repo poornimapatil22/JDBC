@@ -17,14 +17,14 @@ public class Query2 {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("TestPersistence");
         EntityManager em = emf.createEntityManager();
-        EntityTransaction et = em.getTransaction();
 
-        Query query = em.createNamedQuery("getById");
-        query.setParameter("id", 2);
 
-        List<Object[]> li = query.getResultList();
-        for (Object[] obj : li) {
-            System.out.println("Name: " + obj[0] + " " + "Email: " + obj[1]);
+        Query query=em.createNamedQuery("getById");
+        query.setParameter("id",2);
+        List<Object[]> list=query.getResultList();
+
+        for (Object[] obj:list){
+            System.out.println("Name: "+obj[0]+"Email: "+obj[1]);
         }
 
     }

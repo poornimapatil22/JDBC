@@ -22,8 +22,8 @@ public class Query4 {
 
         Query query = em.createNamedQuery("getSingleAll");
         query.setParameter("id", 9);
-        List<EmployeeCard> str = (List<EmployeeCard>)query.getResultList();
-        str.forEach(ref->System.out.println(ref));
+        List<EmployeeCard> list = query.getResultList();
+        list.forEach(ref->System.out.println(ref));
     }
 
 }

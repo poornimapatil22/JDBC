@@ -19,8 +19,8 @@ public class Query3 {
 
         Query query = em.createNamedQuery("getCountByWeight");
         query.setParameter("weight", 30.0);
-        Long count = (Long) query.getSingleResult();
-        System.out.println("Count of employees with weight > 70: " + count);
+        long count =(Long) query.getSingleResult();
+        System.out.println("Count of employees with weight > 30: " + count);
     }
 
 }

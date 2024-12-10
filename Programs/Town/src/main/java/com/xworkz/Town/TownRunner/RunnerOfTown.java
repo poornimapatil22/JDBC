@@ -22,7 +22,6 @@ public class RunnerOfTown {
                 townEntity2.setTownName(townEntity1.getTownName());
                 townEntity2.setAge(townEntity1.getAge());
                 townEntity2.setPhone(townEntity1.getPhone());
-
                 entityManager.persist(townEntity2);
                 entityTransaction.commit();
 
